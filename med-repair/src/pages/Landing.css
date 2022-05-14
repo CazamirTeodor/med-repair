@@ -189,3 +189,7 @@
   cursor: pointer;
   /* padding-top: 5px; */
 }
+
+.chat-window .message-input .send-button .send-button-text {
+  margin-top: 7px;
+}

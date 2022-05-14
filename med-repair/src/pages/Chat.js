@@ -1,12 +1,22 @@
 import React from "react";
 
+const doctor_messages = [
+  "Simptomele tale sunt asemanatoare bolii CoVID-19. Recomandarea mea este să anunţi autorităţile pentru a fi testat!",
+];
+
+let user_messages = [];
+
 function Chat(props) {
   const { openChat, setOpenChat } = props;
 
-  console.log(openChat);
-
   const handleCloseChat = () => {
     setOpenChat(false);
+  };
+
+  const handleSendMessageButton = (new_message) => {
+    if (new_message.length === 0 || new_message === null) return;
+
+    user_messages.push(new_message);
   };
 
   return (
@@ -23,7 +33,9 @@ function Chat(props) {
       <div className="messages-section"></div>
       <div className="message-input">
         <textarea className="textarea"></textarea>
-        <div className="send-button">Trimite!</div>
+        <div className="send-button">
+          <div className="send-button-text">Trimite!</div>
+        </div>
       </div>
     </div>
   );
