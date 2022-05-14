@@ -1,0 +1,24 @@
+.page {
+    height: 100%;
+    width: 100%;
+  
+    /* background: rgb(36, 158, 151);
+    background: linear-gradient(
+      0deg,
+      rgba(36, 158, 151, 1) 0%,
+      rgba(219, 219, 219, 1) 100%
+    ); */
+    background-image: url("./assets/images/background.png");
+    background-size: cover;
+  }
+  
+  .page .logo {
+    width: clamp(100px, 100vw, 200px);
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+    .page .logo img {
+        max-width: 100%;}

@@ -1,17 +1,15 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Login from "./pages/Login/Login";
-import LandingNotAuth from "./pages/LandingNotAuth/LandingNotAuth";
-import LandingAuth from "./pages/LandingAuth/LandingAuth";
+import Landing from "./pages/Landing";
+import NavBar from "./components/NavBar";
+import './App.css';
 
 const App = () => {
   return (
     <div className="content">
+      <NavBar />
       <Router>
         <Routes>
-          <Route exact path="/" element={<LandingAuth />} />
-          <Route exact path="/login" element={<Login />} />
-
-          <Route path="*" element={<LandingNotAuth />} />
+          <Route exact path="/" element={<Landing />} />
         </Routes>
       </Router>
     </div>
