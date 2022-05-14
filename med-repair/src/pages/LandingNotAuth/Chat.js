@@ -8,6 +8,7 @@ export default function Chat() {
         <div className="chat-status"></div>
       </div>
       <div className="chat-description"> Descrie-mi problema ta!</div>
+      <div className="messages-section"></div>
     </div>
   );
 }
