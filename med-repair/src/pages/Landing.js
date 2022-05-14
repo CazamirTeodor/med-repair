@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./Landing.css";
 import Doctor from "../assets/images/Doctor.png";
@@ -7,8 +7,16 @@ import Clinica_icon from "../assets/images/clinica_icon.png";
 import medlogo from "../assets/images/logo.png";
 import Banner from "../assets/images/Banner.png";
 
+import Chat from "./Chat";
+
 export default function Landing() {
+  const [openChat, setOpenChat] = useState(false);
+
   const handlePushButton = () => {};
+
+  const handleOpenChat = () => {
+    setOpenChat(true);
+  };
 
   return (
     <div className="page landing-page">
@@ -28,7 +36,7 @@ export default function Landing() {
         <div className="assist-option">
           <img className="chat-bubble" src={Banner} alt="chat"></img>
           <img className="doctor" src={Doctor} alt="doctor"></img>
-          <div className="assist-button">
+          <div onClick={() => handleOpenChat()} className="assist-button">
             <p>Am nevoie de asistenţă</p>
           </div>
         </div>
@@ -36,6 +44,8 @@ export default function Landing() {
           <img src={Clinica_icon} alt="clinic"></img>
           <p>Caută o clinică</p>
         </div>
+
+        <Chat openChat={openChat} setOpenChat={setOpenChat} />
       </div>
     </div>
   );
