@@ -1,11 +1,11 @@
 import React from "react";
 
 import "./notauth.css";
-import Doctor from "../../images/Doctor.png";
-import Doctor_icon from "../../images/doctor_icon.png";
-import Clinica_icon from "../../images/clinica_icon.png";
-import medlogo from "../../images/Logo.png";
-import Banner from "../../images/Banner.png";
+import Doctor from "../../assets/images/Doctor.png";
+import Doctor_icon from "../../assets/images/doctor_icon.png";
+import Clinica_icon from "../../assets/images/clinica_icon.png";
+import medlogo from "../../assets/images/logo.png";
+import Banner from '../../assets/images/Banner.png';
 
 export default function LandingNotAuth() {
   const handlePushButton = () => {};

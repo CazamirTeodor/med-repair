@@ -8,7 +8,7 @@
     rgba(36, 158, 151, 1) 0%,
     rgba(219, 219, 219, 1) 100%
   ); */
-  background-image: url("../../images/background.png");
+  background-image: url("../../assets/images/background.png");
   background-position: center;
   display: inline-flex;
   min-width: 600px;
