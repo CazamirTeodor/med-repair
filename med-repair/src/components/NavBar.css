@@ -1,0 +1,78 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 10px 10px 0;
+    width: 100%;
+    height: 25px;
+    background-color: transparent;
+    position: fixed;
+}
+
+.navbar p {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .left {
+    position: relative;
+    width: 100%;
+}
+
+.navbar .left .filled-btn {
+    position: absolute;
+    left: 0;
+}
+
+.navbar .right > p {
+    margin: 0 20px;
+    line-height: 27px;
+    font-family: 'Poppins-Medium';
+    font-size: 14px;
+    letter-spacing: 1px;
+    height: 100%;
+    background-color: transparent;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar .right > p:hover {
+    border-bottom: 2px solid black;
+}
+
+
+
+.navbar .right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.filled-btn {
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: rgb(63, 63, 63);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    height: 100%;
+    padding: 0px 15px;
+    font-size: 12px;
+    font-weight: 550;
+    letter-spacing: 1.5px;
+    border: 1px solid rgb(63, 63, 63);
+    border-radius: 8px;
+    font-family: 'Poppins-Medium';
+    margin-left: 20px;
+}
+
+.filled-btn > p {
+    line-height: 25px;
+}
+
+
+.filled-btn:hover {
+    background-color: white;
+    color: rgb(63, 63, 63);
+}
