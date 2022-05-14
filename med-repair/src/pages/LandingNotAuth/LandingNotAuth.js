@@ -7,6 +7,8 @@ import Clinica_icon from "../../assets/images/clinica_icon.png";
 import medlogo from "../../assets/images/logo.png";
 import Banner from '../../assets/images/Banner.png';
 
+import Chat from "./Chat";
+
 export default function LandingNotAuth() {
   const handlePushButton = () => {};
 
@@ -52,6 +54,8 @@ export default function LandingNotAuth() {
           </div>
         </div>
       </div>
+
+      <Chat />
     </div>
   );
 }
