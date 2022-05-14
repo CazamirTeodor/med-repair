@@ -21,7 +21,9 @@
 
 .menu-button:hover {
   transform: scale(1.1);
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .menu-button > img {
@@ -38,7 +40,7 @@
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
-  font-family: 'Poppins-Medium';
+  font-family: "Poppins-Medium";
   letter-spacing: 0.5px;
   font-size: 1.2vw;
   width: 100%;
@@ -54,21 +56,24 @@
   height: 2vw;
   transition: 0.3s;
   cursor: pointer;
-  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
 .assist-button:hover {
   background-color: rgb(213, 63, 63);
   color: white;
   transform: scale(1.1);
-  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
-
 
 .assist-button > p {
   line-height: 2vw;
   margin: auto;
-  font-family: 'Poppins-Medium';
+  font-family: "Poppins-Medium";
   font-size: 0.8vw;
   text-align: center;
   font-weight: 700;
@@ -95,3 +100,92 @@
   height: 6vw;
 }
 
+/* chat */
+.chat-window {
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  left: 50%;
+  margin-left: -200px;
+  bottom: 0;
+  border-top-left-radius: 1.4rem;
+  border-top-right-radius: 1.4rem;
+}
+
+.chat-window .chat-bar {
+  display: inline-flex;
+  width: 100%;
+  height: 40px;
+  background-color: black;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 10px;
+  border-top-left-radius: 1.4rem;
+  border-top-right-radius: 1.4rem;
+}
+
+.chat-window .chat-bar .chat-bar-text {
+  margin-left: 100px;
+}
+.chat-window .chat-bar .doctor_status {
+  width: 20px;
+  height: 20px;
+  background: green;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-top: 2px;
+}
+
+.chat-window .chat-description {
+  height: 30px;
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+}
+
+.chat-window .chat-bar .exit-button {
+  width: 25px;
+  height: 25px;
+  background-color: red;
+  position: relative;
+  margin-top: 3px;
+  margin-left: 90px;
+}
+
+.chat-window .messages-section {
+  background-color: #fff;
+  height: 270px;
+  overflow-y: scroll;
+}
+
+.chat-window .message-input {
+  height: 50px;
+  width: 400px;
+  border: 1px solid blue;
+  background-color: #fff;
+  display: inline-flex;
+  /* position: fixed;
+  bottom: 0; */
+}
+
+.chat-window .message-input .textarea {
+  border-radius: 1.4rem;
+  width: 280px;
+  height: 35px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.chat-window .message-input .send-button {
+  width: 80px;
+  height: 40px;
+  margin-top: 5px;
+  margin-left: 15px;
+  border-radius: 1.4rem;
+  background-color: black;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  /* padding-top: 5px; */
+}
