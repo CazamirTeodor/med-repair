@@ -7,7 +7,7 @@ import Clinica_icon from "../assets/images/clinica_icon.png";
 import medlogo from "../assets/images/logo.png";
 import Banner from "../assets/images/Banner.png";
 
-import Chat from "./Chat";
+import Chat from "../components/Chat";
 
 export default function Landing() {
   const [openChat, setOpenChat] = useState(false);
@@ -15,7 +15,8 @@ export default function Landing() {
   const handlePushButton = () => {};
 
   const handleOpenChat = () => {
-    setOpenChat(true);
+    setOpenChat(!openChat);
+    console.log(openChat);
   };
 
   return (
@@ -36,16 +37,16 @@ export default function Landing() {
         <div className="assist-option">
           <img className="chat-bubble" src={Banner} alt="chat"></img>
           <img className="doctor" src={Doctor} alt="doctor"></img>
-          <div onClick={() => handleOpenChat()} className="assist-button">
+          <div onClick={handleOpenChat} className="assist-button">
             <p>Am nevoie de asistenţă</p>
           </div>
         </div>
-        <div className="menu-button" onClick={() => handlePushButton()}>
+        <div className="menu-button" onClick={handlePushButton}>
           <img src={Clinica_icon} alt="clinic"></img>
           <p>Caută o clinică</p>
         </div>
 
-        <Chat openChat={openChat} setOpenChat={setOpenChat} />
+        <Chat openChat={openChat} setOpenChat={handleOpenChat}/>
       </div>
     </div>
   );
