@@ -1,45 +1,22 @@
-import { BrowserRouter, Routes, Navigate } from "react-router-dom";
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Login from "./pages/Login/Login";
 import LandingNotAuth from "./pages/LandingNotAuth/LandingNotAuth";
 import LandingAuth from "./pages/LandingAuth/LandingAuth";
-
-import PrivateRoute from "./routes/PrivateRoute";
-import PublicRoute from "./routes/PublicRoute";
-
-function App() {
-  const auth = true;
+const App = () => {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <div className="content">
-          <Routes>
-            <PublicRoute
-              path="/login"
-              component={Login}
-              isAuthenticated={auth}
-            />
+    <div className="content">
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<LandingAuth />} />
+          <Route exact path="/login" element={<Login />} />
 
-            {/* <Navbar /> */}
-            <PrivateRoute
-              path="/landingnotauth"
-              component={LandingNotAuth}
-              isAuthenticated={auth}
-            />
-            <PrivateRoute
-              path="/landingauth"
-              component={LandingAuth}
-              isAuthenticated={auth}
-            />
-
-            <Navigate to={auth ? "/landingauth" : "/login"} />
-          </Routes>
-        </div>
-      </BrowserRouter>
+          <Route path="*" element={<LandingNotAuth />} />
+        </Routes>
+      </Router>
     </div>
   );
-}
+};
 
 export default App;
