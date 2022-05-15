@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import medlogo from "../assets/images/logo.png";
 import DropdownList from "../components/DropdownList";
 import Arrow from "../assets/images/arrow.png";
@@ -41,13 +42,13 @@ class Search extends React.Component {
     return (
       <div className="search-page">
         <div className="page-wrapper">
-          <div className="logo">
+          <Link className="logo" to="/">
             <img
               className="logo-picture"
               src={medlogo}
               alt="doctor pictogram"
             ></img>
-          </div>
+          </Link>
           <p className="page-title">
             {this.props.type === "medics"
               ? "Completează formularul pentru a găsi medicul potrivit!"

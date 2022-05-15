@@ -12,12 +12,14 @@
     background-size: cover;
   }
   
+  
   .page .logo {
     width: clamp(100px, 100vw, 200px);
     position: absolute;
     top: 30px;
     left: 50%;
     transform: translateX(-50%);
+    cursor: pointer
   }
   
     .page .logo img {

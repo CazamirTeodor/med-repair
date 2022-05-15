@@ -1,6 +1,5 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
-import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 
 class NavBar extends React.Component {
@@ -17,24 +16,23 @@ class NavBar extends React.Component {
         {this.state.authenticated ? (
           <div className="left">
             <div className="filled-btn">
-              <p onClick={() => <Redirect to="/login"/>}>
-                Profilul meu
-              </p>
+              <Link to={"/my-profile"}>Profilul meu</Link>
             </div>
           </div>
         ) : null}
 
         <div className="right">
-          <p onClick={() => this.props.history.push("/medics")}>Medici</p>
-          <p onClick={() => this.props.history.push("/clinics")}>
-            Clinici
-          </p>
+          <Link to={"/medics"}>Medici</Link>
+          <Link to={"/clinics"}>Clinici</Link>
           <div className="filled-btn">
             {this.state.authenticated ? (
-
-              <p onClick={() => this.props.history.push("/landing")}>Deautentificare</p>
+              <Link to={"/login"}>
+                Logout
+              </Link>
             ) : (
-              <p onClick={() => this.props.history.push("/login")}>Autentificare</p>
+              <Link to={"/login"}>
+                Autentificare
+              </Link>
             )}
           </div>
         </div>
@@ -43,4 +41,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default withRouter(NavBar);
+export default NavBar;

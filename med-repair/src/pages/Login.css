@@ -80,6 +80,8 @@
 }
 
 .login-container .back-button {
+    text-decoration: none;
+    color: white;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -87,9 +89,8 @@
     font-size: 12px;
     letter-spacing: 1px;
     border-radius: 10px;
-    padding: 0px 13px;
+    padding: 3px 13px;
     border: 1px solid black;
-    height: 27px;
     font-family: 'Poppins-Medium';
     cursor: pointer;
     background-color: rgb(44, 162, 182);
@@ -98,5 +99,7 @@
 
 .login-container .back-button:hover {
     background-color: white;
+    color: rgb(44, 162, 182);
 }
+
 

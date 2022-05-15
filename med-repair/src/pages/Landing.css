@@ -8,6 +8,8 @@
 }
 
 .menu-button {
+  text-decoration: none;
+  color: black;
   position: relative;
   cursor: pointer;
   border-radius: 3vw;

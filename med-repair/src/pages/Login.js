@@ -1,7 +1,7 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
 import "./Login.css";
 import medlogo from "../assets/images/logo.png";
+import { Link } from "react-router-dom";
 
 class Login extends React.Component {
   constructor(props) {
@@ -30,9 +30,9 @@ class Login extends React.Component {
   render() {
     return (
       <div className="page login-page">
-        <div className="logo">
+        <Link className="logo" to="/">
           <img className="logo-picture" src={medlogo} alt="logo"></img>
-        </div>
+        </Link>
         <div className="login-container">
           <div className="login-form">
             <p className="banner">Te rugăm să introduci datele</p>
@@ -49,11 +49,11 @@ class Login extends React.Component {
             <button onClick={this.loginHandler}>AUTENTIFICARE</button>
             <p className="forgot-pass">Mi-am uitat parola!</p>
           </div>
-          <button className="back-button">Mergi inapoi</button>
+          <Link className="back-button" to={"/"}>Mergi inapoi</Link>
         </div>
       </div>
     );
   }
 }
 
-export default withRouter(Login);
+export default Login;

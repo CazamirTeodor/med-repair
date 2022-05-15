@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Landing.css";
 import Doctor from "../assets/images/Doctor.png";
 import Doctor_icon from "../assets/images/doctor_icon.png";
@@ -24,19 +24,19 @@ class Landing extends React.Component {
   render() {
     return (
       <div className="page landing-page">
-        <div className="logo">
+        <Link className="logo" to={"/"}>
           <img
             className="logo-picture"
             src={medlogo}
             alt="doctor pictogram"
           ></img>
-        </div>
+        </Link>
 
         <div className="menu">
-          <div className="menu-button" >
+          <Link className="menu-button" to={"/medics"}>
             <img src={Doctor_icon} alt="doctor pictogram"></img>
             <p>Caută un medic</p>
-          </div>
+          </Link>
           <div className="assist-option">
             <img className="chat-bubble" src={Banner} alt="chat"></img>
             <img className="doctor" src={Doctor} alt="doctor"></img>
@@ -44,10 +44,10 @@ class Landing extends React.Component {
               <p>Am nevoie de asistenţă</p>
             </div>
           </div>
-          <div className="menu-button" >
+          <Link className="menu-button" to={"/clinics"}>
             <img src={Clinica_icon} alt="clinic"></img>
             <p>Caută o clinică</p>
-          </div>
+          </Link>
 
           <Chat openChat={this.state.openChat} setOpenChat={this.setOpenChat} />
         </div>
@@ -56,4 +56,4 @@ class Landing extends React.Component {
   }
 }
 
-export default withRouter(Landing);
+export default Landing;
