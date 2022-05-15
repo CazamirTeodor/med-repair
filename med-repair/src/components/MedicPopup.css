@@ -1,0 +1,226 @@
+.medic-popup{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.654);
+    animation: fade-in 0.3s ease-in-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    
+}
+
+.medic-popup-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(241, 241, 241);
+    border-radius: 1vw;
+    animation: expand 0.3s;
+    overflow: hidden;
+    width: 70vw;
+}
+
+@keyframes expand {
+    0%{
+        width: 0;
+        height: 0;
+    }
+    100%{
+        width: 70vw;
+    }
+}
+
+.medic-popup-content .close-button{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 1.5vw;
+    height: 1.5vw;
+    background-color: rgb(241, 241, 241);
+    border: none;
+    cursor: pointer;
+}
+.medic-popup-content .close-button > img{
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.medic-popup-content .close-button:hover > img{
+    filter: invert(100%);
+}
+
+.medic-popup-content{
+    padding: 2vw;
+}
+
+.medic-card {
+    border-radius: 3vw;
+    background-color: white;
+    padding: 1vw;
+}
+
+.medic-card > img {
+    height: 6vw;
+    margin-left: 1vw;
+}
+
+.medic-popup .medic-card {
+    display: flex;
+}
+
+.medic-popup-content .medic-card .name {
+    font-size: 2.3vw;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.medic-popup-content .medic-card .appointments {
+    font-size: 1vw;
+}
+
+.medic-popup-content .medic-card .position {
+    font-size: 1.2vw;
+}
+
+.medic-popup-content .medic-details {
+    width: 60%;
+}
+
+.medic-popup .rating-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.medic-popup .medic-details > p, .rating-wrapper {
+    margin: 0.5vw 2vw;
+    font-size: 1.1vw;
+}
+
+.medic-popup-content .rating-wrapper > p {
+    margin: 0 7px;
+}
+
+.medic-popup-content .rating > img{
+    height: 1.4vw;
+    margin: 0 1px;
+}
+
+.medic-popup-content .medic-workplaces{
+    display: flex;
+}
+
+.medic-popup-content .medic-workplaces > img {
+    height: 5vw;
+    border-radius: 50%;
+}
+
+.medic-popup-content .medic-workplaces .workplaces-wrapper > p{
+    margin: 0.6vw;
+    font-size: 1vw;
+}
+
+.medic-popup-content .services-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.medic-popup-content .services-wrapper .service{
+    background-color: white;
+    padding: 0 0.5vw;
+    border-radius: 1vw;
+    width: 15%;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid black;
+}
+
+.medic-popup-content .services-wrapper .service:hover{
+    background-color: black;
+    color: white;
+}
+
+.medic-popup-content .services-wrapper .service .name{
+    text-align: center;
+    font-size: 1.1vw;
+    margin: 0 2px;
+}
+
+.medic-popup-content .services-wrapper .service .price{
+    text-align: center;
+    font-size: 0.9vw;
+    margin: 0 2px;
+}
+
+.filters-wrapper{
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 2vw;
+}   
+
+.filters-wrapper > div{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}   
+
+.filters-wrapper .filter p{
+    font-size: 1.1vw;
+    margin: 0.5vw;
+}
+
+.filters-wrapper input {
+    height: 2.5vw;
+    padding: 0 1vw;
+    border-radius: 1vw;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.appointment-button{
+    position: absolute;
+    bottom: 1.5vw;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    padding: 0.4vw 1vw;
+    background-color: rgb(38, 189, 49);
+    border: 1px solid rgb(38, 189, 49);
+    color: white;
+    border-radius: 1vw;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.appointment-button > p{
+    margin: 0;
+    font-size: 1vw;
+}
+
+.appointment-button:hover{
+    background-color: white;
+    color: rgb(38, 189, 49);
+}
+
+
+.medic-popup-content > p{
+    font-size: 1.3vw;
+    text-align: center;
+}
+
+

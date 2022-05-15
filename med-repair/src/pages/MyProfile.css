@@ -3,7 +3,7 @@
 .profile-window {
   position: absolute;
   width: 60%;
-  height: 80%;
+  height: 40vw;
   left: 50%;
   top: 55%;
   transform: translate(-50%, -50%);
@@ -15,42 +15,46 @@
 }
 
 .profile-window .user-details {
+  font-family: 'Poppins-Medium';
+  margin-top: 20px;
   height: 15%;
-  min-height: 50px;
-  justify-content: center;
+  
 }
 
 .profile-window .user-details .user-name {
-  padding-top: 20px;
   text-align: center;
   font-weight: 600;
-  font-size: large;
+  font-size: 1.3vw;
 }
 
 .profile-window .user-details .user-id {
+  letter-spacing: 0.5px;
   text-align: center;
+  font-size: 1vw;
+  color: rgb(100, 100, 100);
 }
 
 .profile-window .user-personal-data {
-  height: 25%;
+  height: 10vw;
   width: 90%;
   margin: 0 auto;
-  min-height: 70px;
   border: solid black 1px;
   box-shadow: 8px 8px 16px 0px rgb(0 0 0 / 20%);
-  border-radius: 1rem;
+  border-radius: 1vw;
+  font-family: 'Poppins-Medium';
+  letter-spacing: 0.5px;
 }
 
 .profile-window .tab-description {
   padding-top: 10px;
   font-weight: 600;
-  font-size: large;
+  font-size: 1.1vw;
   display: flex;
   justify-content: center;
 }
 
 .profile-window .tab-description .key {
-  min-width: 150px;
+
 }
 
 .profile-window .tab-description .value {
@@ -60,22 +64,18 @@
 
 .profile-window .user-personal-data .tab-data {
   display: flex;
-  height: 65%;
-  min-height: 95px;
+  flex-direction: row;
   margin-top: 5px;
   justify-content: center;
+  width: 100%;
 }
 
 .profile-window .user-personal-data .tab-data .user-tab-details {
-  /* width: 22%; */
   padding: 8px;
-  height: 80%;
-  min-height: 80px;
-  min-width: 200px;
   background-color: black;
-  margin-left: 15px;
-  margin-right: 5px;
-  border-radius: 1rem;
+  margin: 5px 5px;
+  font-size: 0.8vw;
+  border-radius: 1vw;
   color: #fff;
 }
 
@@ -84,29 +84,26 @@
   font-weight: 600;
 }
 
-.profile-window .user-personal-data .tab-data .user-tab-details .row-details {
-  margin-top: 1px;
-  display: flex;
+
+
+.profile-window
+.user-personal-data
+.tab-data
+.user-tab-details
+.key {
+font-weight: 600;
+text-align: right;
 }
 
 .profile-window
-  .user-personal-data
-  .tab-data
-  .user-tab-details
-  .row-details
-  .key {
-  min-width: 120px;
+.user-personal-data
+.tab-data
+.user-tab-details
+.value {
+  font-family: 'Poppins-Light';
 }
 
-.profile-window
-  .user-personal-data
-  .tab-data
-  .user-tab-details
-  .row-details
-  .value {
-  margin-left: 10px;
-  min-width: 100px;
-}
+
 
 .profile-window .user-medical-data {
   height: 80%;

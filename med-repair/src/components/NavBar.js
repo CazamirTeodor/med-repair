@@ -7,7 +7,7 @@ class NavBar extends React.Component {
     super(props);
     this.state = {
       activePage: "home",
-      authenticated: false,
+      authenticated: true,
     };
   }
   render() {
@@ -27,7 +27,7 @@ class NavBar extends React.Component {
           <div className="filled-btn">
             {this.state.authenticated ? (
               <Link to={"/login"}>
-                Logout
+                Deautentificare
               </Link>
             ) : (
               <Link to={"/login"}>

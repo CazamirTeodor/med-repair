@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import "./MyProfile.css";
 import medlogo from "../assets/images/logo.png";
+import { Link } from "react-router-dom";
 
 let history = [
   {
@@ -48,7 +49,7 @@ export default function MyProfile() {
 
   const [disease, setdisease] = useState([
     {
-      name: "Dermativa",
+      name: "Dermatita",
       type: "Consult",
     },
     {
@@ -63,13 +64,13 @@ export default function MyProfile() {
   });
   return (
     <div className="page myprofile-page">
-      <div className="logo">
+      <Link className="logo" to="/">
         <img
           className="logo-picture"
           src={medlogo}
           alt="doctor pictogram"
         ></img>
-      </div>
+      </Link>
 
       <div className="profile-window">
         <div className="user-details">
@@ -81,45 +82,45 @@ export default function MyProfile() {
         <div className="user-personal-data">
           <div className="tab-description">Datele mele</div>
           <div className="tab-data">
-            <div className="user-tab-details">
-              <div className="row-details">
-                <div className="key">CNP:</div>
-                <div className="value"> {userDetails.id}</div>
-              </div>
-              <div className="row-details">
-                <div className="key">Serie: </div>
-                <div className="value"> {userDetails.serie}</div>
-              </div>
-              <div className="row-details">
-                <div className="key">Domiciliu: </div>
-                <div className="value"> {userDetails.address}</div>
-              </div>
-            </div>
-            <div className="user-tab-details">
-              <div className="row-details">
-                <div className="key">Nume:</div>
-                <div className="value"> {userDetails.surname}</div>
-              </div>
-              <div className="row-details">
-                <div className="key">Prenume:</div>
-                <div className="value"> {userDetails.name}</div>
-              </div>
-              <div className="row-details">
-                <div className="key">Sex:</div>
-                <div className="value"> {userDetails.sex}</div>
-              </div>
-            </div>
-            <div className="user-tab-details">
-              <div className="row-details">
-                <div
+            <table className="user-tab-details">
+              <tr>
+                <td className="key">CNP:</td>
+                <td className="value"> {userDetails.id}</td>
+              </tr>
+              <tr>
+                <td className="key">Serie: </td>
+                <td className="value"> {userDetails.serie}</td>
+              </tr>
+              <tr>
+                <td className="key">Domiciliu: </td>
+                <td className="value"> {userDetails.address}</td>
+              </tr>
+            </table>
+            <table className="user-tab-details">
+              <tr>
+                <td className="key">Nume:</td>
+                <td className="value"> {userDetails.name}</td>
+              </tr>
+              <tr>
+                <td className="key">Prenume:</td>
+                <td className="value"> {userDetails.surname}</td>
+              </tr>
+              <tr>
+                <td className="key">Sex:</td>
+                <td className="value"> {userDetails.sex}</td>
+              </tr>
+            </table>
+            <table className="user-tab-details">
+              <tr>
+                <td
                   className="key"
                   style={{
                     color: "rgb(0, 116, 161)",
                   }}
                 >
                   Grupa Sangvina:
-                </div>
-                <div
+                </td>
+                <td
                   className="value"
                   style={{
                     color: "rgb(0, 116, 161)",
@@ -127,43 +128,44 @@ export default function MyProfile() {
                 >
                   {" "}
                   {userDetails.blood}
-                </div>
-              </div>
-              <div className="row-details">
-                <div className="key">Greutate:</div>
-                <div className="value"> {userDetails.weight}</div>
-              </div>
-              <div className="row-details">
-                <div className="key">Înălţime:</div>
-                <div className="value"> {userDetails.height}</div>
-              </div>
-            </div>
-            <div className="user-tab-details">
-              <div className="afect">Afectiuni:</div>
-              <div className="row-details">
-                <div className="key"> {disease[0].name}:</div>
-                <div
+                </td>
+              </tr>
+              <tr>
+                <td className="key">Greutate:</td>
+                <td className="value"> {userDetails.weight}</td>
+              </tr>
+              <tr>
+                <td className="key">Înălţime:</td>
+                <td className="value"> {userDetails.height}</td>
+              </tr>
+            </table>
+            <table className="user-tab-details">
+              <tr className="afect">
+                <td colSpan={2}>Afectiuni:</td>
+              </tr>
+              <tr>
+                <td className="key"> {disease[0].name}:</td>
+                <td
+                  className="value"
+                  style={{
+                    color: "rgb(0, 116, 161)",
+                  }}
+                >
+                  {disease[1].type}
+                </td>
+              </tr>
+              <tr>
+                <td className="key"> {disease[1].name}:</td>
+                <td
                   className="value"
                   style={{
                     color: "rgb(0, 116, 161)",
                   }}
                 >
                   {disease[0].type}
-                </div>
-              </div>
-              <div className="row-details">
-                <div className="key"> {disease[1].name}:</div>
-                <div
-                  className="value"
-                  style={{
-                    color: "rgb(0, 116, 161)",
-                  }}
-                >
-                  {" "}
-                  {disease[1].type}
-                </div>
-              </div>
-            </div>
+                </td>
+              </tr>
+            </table>
           </div>
         </div>
         <div className="user-medical-data">

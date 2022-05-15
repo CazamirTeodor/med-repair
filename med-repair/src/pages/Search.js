@@ -7,8 +7,21 @@ import SearchResult from "../components/SearchResult";
 import DoctorIcon from "../assets/images/surgeon-doctor.png";
 import ClinicIcon from "../assets/images/clinic.jpeg";
 import "./Search.css";
+import MedicPopup from "../components/MedicPopup";
 
 class Search extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      displayPopup: false
+    };
+  }
+
+  togglePopup = () => {
+    console.log("togglePopup");
+    this.setState({ displayPopup: !this.state.displayPopup });
+  }
+
   render() {
     let specialties = [
       "Stomatologie",
@@ -39,8 +52,14 @@ class Search extends React.Component {
         rating: 5
       }
     ];
+
+
     return (
       <div className="search-page">
+        {
+          this.state.displayPopup &&
+          <MedicPopup onClick={this.togglePopup}/>
+        }
         <div className="page-wrapper">
           <Link className="logo" to="/">
             <img
@@ -103,6 +122,7 @@ class Search extends React.Component {
             <div className="search-results-list">
               {results.map((result) => (
                 <SearchResult
+                  onClick={this.togglePopup}
                   name={result.name}
                   image={this.props.type === "medics" ? DoctorIcon : ClinicIcon}
                   rating={result.rating}
