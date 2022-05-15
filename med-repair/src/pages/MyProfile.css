@@ -1,0 +1,196 @@
+/* .myprofile-page {
+} */
+.profile-window {
+  position: absolute;
+  width: 60%;
+  height: 80%;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 8px 8px 16px 0px rgb(0 0 0 / 20%);
+}
+
+.profile-window .user-details {
+  height: 15%;
+  min-height: 50px;
+  justify-content: center;
+}
+
+.profile-window .user-details .user-name {
+  padding-top: 20px;
+  text-align: center;
+  font-weight: 600;
+  font-size: large;
+}
+
+.profile-window .user-details .user-id {
+  text-align: center;
+}
+
+.profile-window .user-personal-data {
+  height: 25%;
+  width: 90%;
+  margin: 0 auto;
+  min-height: 70px;
+  border: solid black 1px;
+  box-shadow: 8px 8px 16px 0px rgb(0 0 0 / 20%);
+  border-radius: 1rem;
+}
+
+.profile-window .tab-description {
+  padding-top: 10px;
+  font-weight: 600;
+  font-size: large;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-window .tab-description .key {
+  min-width: 150px;
+}
+
+.profile-window .tab-description .value {
+  min-width: 150px;
+  margin-left: 40px;
+}
+
+.profile-window .user-personal-data .tab-data {
+  display: flex;
+  height: 65%;
+  min-height: 95px;
+  margin-top: 5px;
+  justify-content: center;
+}
+
+.profile-window .user-personal-data .tab-data .user-tab-details {
+  /* width: 22%; */
+  padding: 8px;
+  height: 80%;
+  min-height: 80px;
+  min-width: 200px;
+  background-color: black;
+  margin-left: 15px;
+  margin-right: 5px;
+  border-radius: 1rem;
+  color: #fff;
+}
+
+.user-tab-details .afect {
+  text-align: center;
+  font-weight: 600;
+}
+
+.profile-window .user-personal-data .tab-data .user-tab-details .row-details {
+  margin-top: 1px;
+  display: flex;
+}
+
+.profile-window
+  .user-personal-data
+  .tab-data
+  .user-tab-details
+  .row-details
+  .key {
+  min-width: 120px;
+}
+
+.profile-window
+  .user-personal-data
+  .tab-data
+  .user-tab-details
+  .row-details
+  .value {
+  margin-left: 10px;
+  min-width: 100px;
+}
+
+.profile-window .user-medical-data {
+  height: 80%;
+  min-height: 250px;
+  width: 90%;
+  margin: 30px auto;
+  border: solid black 1px;
+  box-shadow: 8px 8px 16px 0px rgb(0 0 0 / 20%);
+  border-radius: 1rem;
+}
+
+.profile-window .user-medical-data .history {
+  background-color: black;
+  height: 75%;
+  width: 95%;
+  border-radius: 1rem;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-window .user-medical-data .history .history-name {
+  color: #fff;
+  height: 40px;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 5px;
+  font-size: large;
+}
+
+.profile-window .user-medical-data .history .history-details {
+  width: 90%;
+  height: 30px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-window .user-medical-data .history .history-details .key {
+  color: #fff;
+  width: 10%;
+  min-width: 40px;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 600;
+  padding-top: 5px;
+}
+
+.profile-window .user-medical-data .history .history-value {
+  width: 90%;
+  height: 50px;
+  margin: 0 auto;
+  display: flex;
+  background-color: #c4c4c4;
+  margin-top: 15px;
+  border-radius: 1rem;
+}
+
+.profile-window .user-medical-data .history .history-value .key {
+  width: 30%;
+  /* min-width: 100px; */
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 600;
+  padding-top: 10px;
+}
+
+.profile-window .user-medical-data .history .history-view-button {
+  color: black;
+  text-align: center;
+  padding-top: 3px;
+  background-color: #fff;
+  width: 150px;
+  height: 25px;
+  font-weight: 500;
+  margin: 0 auto;
+  border-radius: 1rem;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.profile-window .user-medical-data .history .history-view-button:hover {
+  transform: scale(1.1);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
