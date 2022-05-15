@@ -1,4 +1,6 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import "./NavBar.css";
 
 class NavBar extends React.Component {
@@ -6,7 +8,7 @@ class NavBar extends React.Component {
     super(props);
     this.state = {
       activePage: "home",
-      authenticated: true,
+      authenticated: false,
     };
   }
   render() {
@@ -15,7 +17,7 @@ class NavBar extends React.Component {
         {this.state.authenticated ? (
           <div className="left">
             <div className="filled-btn">
-              <p onClick={() => this.setState({ activePage: "profile" })}>
+              <p onClick={() => <Redirect to="/login"/>}>
                 Profilul meu
               </p>
             </div>
@@ -23,22 +25,22 @@ class NavBar extends React.Component {
         ) : null}
 
         <div className="right">
-          <p onClick={() => this.setState({ activePage: "medics" })}>Medici</p>
-          <p onClick={() => this.setState({ activePage: "clinics" })}>
+          <p onClick={() => this.props.history.push("/medics")}>Medici</p>
+          <p onClick={() => this.props.history.push("/clinics")}>
             Clinici
           </p>
           <div className="filled-btn">
             {this.state.authenticated ? (
-              <p>Deautentificare</p>
+
+              <p onClick={() => this.props.history.push("/landing")}>Deautentificare</p>
             ) : (
-              <p>Autentificare</p>
+              <p onClick={() => this.props.history.push("/login")}>Autentificare</p>
             )}
           </div>
         </div>
-        
       </div>
     );
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);

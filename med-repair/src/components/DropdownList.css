@@ -1,0 +1,61 @@
+.dropdown {
+    position: relative;
+    border-radius: 1.1vw;
+    cursor: pointer;
+    width: 49.5%;
+    height: 3vw;
+    font-size: 1.3vw;
+    letter-spacing: 0.5px;
+    background-color: white;
+    text-align: center;
+}
+
+.dropdown .dropdown-icon {
+    display: block; 
+    right: 3%;
+    top: 45%;
+    position: absolute;
+    width: 0.8vw;
+    cursor: pointer;
+}
+
+
+.dropdown .all-options {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 1vw;
+    margin: 5px auto;
+    max-height: 300px;
+    overflow-y: scroll;
+    transition: 0.3s;
+}
+
+
+.dropdown .all-options p {
+    border-radius: 3px;
+    height: 2vw;
+    width: 100%;
+    font-size: 0.9vw;
+    letter-spacing: 1.5px;
+    text-align: center;
+    margin: 0;
+    line-height: 2vw;
+    font-family: 'Poppins-Light';
+    transition: 0.3s;
+}
+
+
+.dropdown .all-options p:hover{
+    background-color: black;
+    color: white;
+}
+
+.dropdown .chosen-option p {
+    font-weight: 500;
+    font-size: 1.1vw;
+    letter-spacing: 1px;
+    margin: 0;
+    line-height: 3vw;
+    cursor: pointer;
+    font-family: 'Poppins-Medium';
+}

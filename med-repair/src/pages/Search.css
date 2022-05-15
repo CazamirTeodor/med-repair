@@ -1,0 +1,182 @@
+.search-page{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(241, 241, 241);
+    overflow-y: scroll;
+}
+
+.search-page p, input {
+    font-family: 'Poppins-Medium';
+}
+
+.search-page .logo-picture{
+    margin-top: 20px;
+    width: 130px;
+    left: 50%;
+}
+
+.search-page .page-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+}
+
+.search-page .page-title {
+    
+    font-size: 1.5vw;
+    letter-spacing: 0.5px;
+    margin-top: 20px;
+}
+
+.search-page .search-form {
+    width: 100%;
+}
+
+.search-page .search-form .name{
+    width: 100%;
+    height: 2vw;
+    border-radius: 1vw;
+    border: none;
+    padding: 0.5vw;
+    font-size: 1.2vw;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.search-page .search-form .dropdowns{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 102%;
+    height: 3vw;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.search-page .search-form .intervals{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 102%;
+    justify-content: space-between;
+}
+
+.search-page .search-form .intervals .interval-separator{
+    width: 1vw;
+    height: 1px;
+    margin: 0;
+    background-color: black;
+}
+
+.search-page .search-form .intervals input {
+    border: none;
+    height: 2.5vw;
+    text-align: center;
+    border-radius: 1vw;
+    font-size: 1vw;
+    width: 20%;
+    padding: 0 3px;
+    letter-spacing: 0.5px;
+}
+
+.search-page .search-form .delete-filters-button{
+    margin-top: 10px;
+    height: 2.3vw;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: -2%;
+    background-color: rgb(44, 162, 182);
+    border: 1px solid rgb(44, 162, 182);
+    border-radius: 0.8vw;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-page .search-form .delete-filters-button:hover{
+    background-color: white;
+}
+
+.search-page .search-form .delete-filters-button > p {
+    color: white;
+    font-size: 1.1vw;
+    margin: auto 15px;
+    line-height: 2.3vw;
+}
+
+.search-page .search-form .delete-filters-button:hover > p{
+    color: rgb(44, 162, 182);
+}
+
+
+.search-page .search-results{
+    width: 100%;
+}
+
+.search-page .search-results .search-count{
+    letter-spacing: 1px;
+    font-family: 'Poppins-Light';
+    font-size: 1.2vw;
+    text-align: center;
+}
+
+.search-page .search-results .search-count > b{
+    font-family: 'Poppins-Medium';
+    font-size: 1.4vw;
+}
+
+.search-page .search-results .sort-filters{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.search-page .search-results .sort-filters > p{
+    margin: 0 5px;
+    padding: 0;
+    letter-spacing: 0.5px;
+    font-size: 1vw;
+}
+
+.search-page .search-results .sort-filters .sort-button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 5px;
+    background-color: black;
+    color: white;
+    height: 100%;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-page .search-results .sort-filters .sort-button > p {
+    margin: 0;
+    padding: 3px 0.5vw 3px 1vw;
+    font-size: 1vw;
+}
+
+.search-page .search-results .sort-filters .sort-button > img{
+    height: 0.8vw;
+    margin-right: 0.5vw;
+    filter: invert(100%);
+}
+
+.search-page .search-results .sort-filters .sort-button:hover{
+    transform: scale(1.1);
+}
+
+.search-page .search-results .search-results-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 2vw;
+}

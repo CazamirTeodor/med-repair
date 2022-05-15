@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import "./Login.css";
 import medlogo from "../assets/images/logo.png";
 
@@ -55,4 +56,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);
