@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 import NavBar from "./components/NavBar";
+import MyProfile from "./pages/MyProfile"
+
 import './App.css';
 
 const App = () => {
@@ -10,7 +12,7 @@ const App = () => {
       <NavBar />
       <Router>
         <Routes>
-          <Route exact path="/" element={<Landing />} />
+          <Route exact path="/" element={<MyProfile />} />
         </Routes>
       </Router>
     </div>
