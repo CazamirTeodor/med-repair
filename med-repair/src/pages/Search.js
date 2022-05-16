@@ -14,14 +14,14 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayPopup: false
+      displayPopup: false,
     };
   }
 
   togglePopup = () => {
     console.log("togglePopup");
     this.setState({ displayPopup: !this.state.displayPopup });
-  }
+  };
 
   render() {
     let specialties = [
@@ -42,7 +42,8 @@ class Search extends React.Component {
     let results = [
       {
         name: "Dr. Ion Popescu",
-        rating: 3
+        clinic_name: "Medicus Center",
+        rating: 3,
       },
       {
         name: "Dr. Marian Georgescu",
@@ -52,8 +53,8 @@ class Search extends React.Component {
         name: "Dr. Alex Marghescu",
         rating: 5
       }
-    ];
 
+    ];
 
     return (
       <div className="search-page">
@@ -130,7 +131,11 @@ class Search extends React.Component {
               {results.map((result) => (
                 <SearchResult
                   onClick={this.togglePopup}
-                  name={result.name}
+                  name={
+                    this.props.type === "medics"
+                      ? result.name
+                      : result.clinic_name
+                  }
                   image={this.props.type === "medics" ? DoctorIcon : ClinicIcon}
                   rating={result.rating}
                 />
