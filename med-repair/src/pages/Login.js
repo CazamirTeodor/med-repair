@@ -1,13 +1,16 @@
 import React from "react";
 import "./Login.css";
 import medlogo from "../assets/images/logo.png";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import Notification from "../components/Notification";
+import { Redirect } from "react-router/cjs/react-router.min";
 
 class Login extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      email: "",
+      code: "",
       password: "",
       error: "",
       loading: false,
@@ -22,9 +25,43 @@ class Login extends React.Component {
     });
   };
 
+  redirectToHome = () => {
+    this.props.history.push("/home");
+  }
+
   loginHandler = (e) => {
     e.preventDefault();
-    console.log("Handle login!");
+    this.setState({
+      loading: true,
+    });
+    if (this.state.code === "" || this.state.password === "") {
+      this.setState({
+        error: "Please fill in all fields!",
+        loading: false,
+      });
+      setTimeout(() => {
+        this.setState({
+          error: "",
+        });
+      }, 4000);
+    } else {
+      setTimeout(() => {
+        if (this.state.code === "12345" && this.state.password === "12345") {
+          console.log("pushed route!");
+          return <Navigate replace to="/"/>;
+        } else {
+          this.setState({
+            error: "Cod sau parola gresita!",
+            loading: false,
+          });
+          setTimeout(() => {
+            this.setState({
+              error: "",
+            });
+          }, 4000);
+        }
+      }, 2000);
+    }
   };
 
   render() {
@@ -40,16 +77,31 @@ class Login extends React.Component {
               onChange={this.inputHandler}
               type={"text"}
               placeholder={"Cod"}
+              name="code"
             />
             <input
               onChange={this.inputHandler}
               type={"password"}
               placeholder={"Parolă"}
+              name="password"
             />
-            <button onClick={this.loginHandler}>AUTENTIFICARE</button>
+            <button onClick={this.loginHandler}>
+              {this.state.loading ? (
+                <div className="progress-bar">
+                  <div className="circle border"></div>
+                </div>
+              ) : (
+                <p>AUTENTIFICARE</p>
+              )}
+            </button>
             <p className="forgot-pass">Mi-am uitat parola!</p>
           </div>
-          <Link className="back-button" to={"/"}>Mergi inapoi</Link>
+          <Link className="back-button" to={"/"}>
+            Mergi inapoi
+          </Link>
+          {this.state.error && (
+            <Notification type="red" msg={this.state.error} />
+          )}
         </div>
       </div>
     );

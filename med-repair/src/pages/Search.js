@@ -8,6 +8,7 @@ import DoctorIcon from "../assets/images/surgeon-doctor.png";
 import ClinicIcon from "../assets/images/clinic.jpeg";
 import "./Search.css";
 import MedicPopup from "../components/MedicPopup";
+import ClinicPopup from "../components/ClinicPopup";
 
 class Search extends React.Component {
   constructor(props) {
@@ -44,11 +45,11 @@ class Search extends React.Component {
         rating: 3
       },
       {
-        name: "Dr. Ion Popescu",
+        name: "Dr. Marian Georgescu",
         rating: 4
       },
       {
-        name: "Dr. Ion Popescu",
+        name: "Dr. Alex Marghescu",
         rating: 5
       }
     ];
@@ -58,7 +59,13 @@ class Search extends React.Component {
       <div className="search-page">
         {
           this.state.displayPopup &&
+          (this.props.type === "medics") &&
           <MedicPopup onClick={this.togglePopup}/>
+        }
+        {
+          this.state.displayPopup &&
+          (this.props.type === "clinics") &&
+          <ClinicPopup onClick={this.togglePopup}/>
         }
         <div className="page-wrapper">
           <Link className="logo" to="/">

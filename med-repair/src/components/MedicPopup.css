@@ -24,10 +24,11 @@
     transform: translate(-50%, -50%);
     background-color: rgb(241, 241, 241);
     border-radius: 1vw;
-    animation: expand 0.3s;
+    animation: expand 0.5s;
     overflow: hidden;
     width: 70vw;
 }
+
 
 @keyframes expand {
     0%{

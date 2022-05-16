@@ -55,11 +55,14 @@
     border: 1px solid black;
     border-radius: 10px;
     height: 30px;
-    letter-spacing: 1px;
+    width: 8vw;
     margin-top: 5px;
-    padding: 0px 15px;
     transition: 0.3s;
     cursor: pointer;
+}
+
+.login-form button > p{
+    font-size: 10px;
 }
 
 .login-form button:hover {
@@ -102,4 +105,45 @@
     color: rgb(44, 162, 182);
 }
 
+.progress-bar {
+    position: relative;
+    left: 52%;
+    bottom: 3px;
+    transform: translate(-50%);
+    width: 11px;
+    height: 11px;
+  }
+  
+  .circle {
+    height: 100%;
+    right: 0px;
+    position: absolute;
+    border: solid 3px  #a9a9a9;
+    border-top-color:  white;
+    border-radius: 50%;
+  }
+  
+  .border {
+    width: 100%;
+    transform: rotate(135deg);  
+    animation: spin 1.3s steps(2) .2s infinite;
+    animation: spin 1.3s linear infinite;
+  
+  }
+  
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+  .login-form button:hover .circle {
+    border: solid 3px  #a9a9a9;
+    border-top-color:  black;
+}
 
