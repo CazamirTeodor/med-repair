@@ -13,14 +13,14 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayPopup: false
+      displayPopup: false,
     };
   }
 
   togglePopup = () => {
     console.log("togglePopup");
     this.setState({ displayPopup: !this.state.displayPopup });
-  }
+  };
 
   render() {
     let specialties = [
@@ -41,25 +41,24 @@ class Search extends React.Component {
     let results = [
       {
         name: "Dr. Ion Popescu",
-        rating: 3
+        clinic_name: "Medicus Center",
+        rating: 3,
       },
       {
         name: "Dr. Ion Popescu",
-        rating: 4
+        clinic_name: "Dental Med",
+        rating: 4,
       },
       {
         name: "Dr. Ion Popescu",
-        rating: 5
-      }
+        clinic_name: "MedLife",
+        rating: 5,
+      },
     ];
-
 
     return (
       <div className="search-page">
-        {
-          this.state.displayPopup &&
-          <MedicPopup onClick={this.togglePopup}/>
-        }
+        {this.state.displayPopup && <MedicPopup onClick={this.togglePopup} />}
         <div className="page-wrapper">
           <Link className="logo" to="/">
             <img
@@ -123,7 +122,11 @@ class Search extends React.Component {
               {results.map((result) => (
                 <SearchResult
                   onClick={this.togglePopup}
-                  name={result.name}
+                  name={
+                    this.props.type === "medics"
+                      ? result.name
+                      : result.clinic_name
+                  }
                   image={this.props.type === "medics" ? DoctorIcon : ClinicIcon}
                   rating={result.rating}
                 />
