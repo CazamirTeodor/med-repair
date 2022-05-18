@@ -63,10 +63,12 @@ class Search extends React.Component {
       },
       {
         name: "Dr. Marian Georgescu",
+        clinic_name: "Dental Med",
         rating: 4,
       },
       {
         name: "Dr. Alex Marghescu",
+        clinic_name: "MedLife",
         rating: 5,
       },
     ];
