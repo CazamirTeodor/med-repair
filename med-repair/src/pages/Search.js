@@ -20,12 +20,12 @@ class Search extends React.Component {
     };
   }
 
-  togglePopup = () => {
-    console.log("togglePopup");
-    if (this.state.displayPopup === true) {
+  togglePopup = (notificationMsg = null) => {
+    console.log("togglePopup", notificationMsg);
+    if (notificationMsg) {
       this.setState({
         displayPopup: !this.state.displayPopup,
-        notificationMsg: "Programare efectuata cu succes!",
+        notificationMsg: notificationMsg,
       });
       setTimeout(() => {
         this.setState({

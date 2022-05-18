@@ -22,7 +22,7 @@ class MedicPopup extends React.Component {
       this.setState({
         loading: false,
       });
-      this.props.onClick();
+      this.props.onClick("Programare efectuata cu succes!");
     }, 3000);
 
     
@@ -46,7 +46,7 @@ class MedicPopup extends React.Component {
     return (
       <div className="medic-popup">
         <div className="medic-popup-content">
-          <div className="close-button" onClick={this.props.onClick}>
+          <div className="close-button" onClick={() => this.props.onClick()}>
             <img src={CloseIcon} alt="close icon" />
           </div>
           <div className="medic-card">

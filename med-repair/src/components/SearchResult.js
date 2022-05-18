@@ -3,9 +3,10 @@ import StarIcon from "../assets/images/star.png";
 import "./SearchResult.css";
 
 class SearchResult extends React.Component {
+
   render() {
     return (
-      <div className="search-result" onClick={this.props.onClick}>
+      <div className="search-result" onClick={() => this.props.onClick()}>
         <img src={this.props.image} alt="result-image" />
         <p className="result-name">{this.props.name}</p>
         <div className="result-rating">
