@@ -47,27 +47,24 @@ class Search extends React.Component {
       },
       {
         name: "Dr. Marian Georgescu",
-        rating: 4
+        clinic_name: "Dental Med",
+        rating: 4,
       },
       {
         name: "Dr. Alex Marghescu",
-        rating: 5
-      }
-
+        clinic_name: "MedLife",
+        rating: 5,
+      },
     ];
 
     return (
       <div className="search-page">
-        {
-          this.state.displayPopup &&
-          (this.props.type === "medics") &&
-          <MedicPopup onClick={this.togglePopup}/>
-        }
-        {
-          this.state.displayPopup &&
-          (this.props.type === "clinics") &&
-          <ClinicPopup onClick={this.togglePopup}/>
-        }
+        {this.state.displayPopup && this.props.type === "medics" && (
+          <MedicPopup onClick={this.togglePopup} />
+        )}
+        {this.state.displayPopup && this.props.type === "clinics" && (
+          <ClinicPopup onClick={this.togglePopup} />
+        )}
         <div className="page-wrapper">
           <Link className="logo" to="/">
             <img

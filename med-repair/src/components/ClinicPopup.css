@@ -1,0 +1,124 @@
+.clinic-popup {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.654);
+  animation: fade-in 0.3s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.clinic-popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(241, 241, 241);
+  border-radius: 1vw;
+  animation: expand 0.5s;
+  overflow: hidden;
+  width: 70vw;
+}
+
+@keyframes expand {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: 70vw;
+  }
+}
+
+.clinic-popup-content .close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 1.5vw;
+  height: 1.5vw;
+  background-color: rgb(241, 241, 241);
+  border: none;
+  cursor: pointer;
+}
+
+.clinic-popup-content .close-button > img {
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.clinic-popup-content .close-button:hover > img {
+  filter: invert(100%);
+}
+
+.clinic-popup-content {
+  padding: 2vw;
+}
+
+.clinic-card {
+  border-radius: 3vw;
+  background-color: white;
+  padding: 1vw;
+}
+
+.clinic-card > img {
+  height: 6vw;
+  margin-left: 1vw;
+  align-self: center;
+}
+
+.clinic-popup .clinic-card {
+  display: flex;
+}
+
+.clinic-popup-content .clinic-card .name {
+  font-size: 2.3vw;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.clinic-popup .rating-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.clinic-popup .clinic-details > p,
+.rating-wrapper {
+  margin: 0.5vw 2vw;
+  font-size: 1.1vw;
+}
+
+.clinic-popup-content .rating-wrapper > p {
+  margin: 0 7px;
+}
+
+.clinic-popup-content .rating > img {
+  height: 1.4vw;
+  margin: 0 1px;
+}
+
+
+.clinic-popup-content .clinic-contact{
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.clinic-popup-content .clinic-contact > img {
+    height: 5vw;
+    border-radius: 50%;
+}
+
+.clinic-popup-content .clinic-contact .contact-wrapper > p{
+    margin: 0.6vw;
+    font-size: 1vw;
+}
