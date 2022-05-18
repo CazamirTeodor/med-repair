@@ -9,18 +9,34 @@ import ClinicIcon from "../assets/images/clinic.jpeg";
 import "./Search.css";
 import MedicPopup from "../components/MedicPopup";
 import ClinicPopup from "../components/ClinicPopup";
+import Notification from "../components/Notification";
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       displayPopup: false,
+      notificationMsg: "",
     };
   }
 
   togglePopup = () => {
     console.log("togglePopup");
-    this.setState({ displayPopup: !this.state.displayPopup });
+    if (this.state.displayPopup === true) {
+      this.setState({
+        displayPopup: !this.state.displayPopup,
+        notificationMsg: "Programare efectuata cu succes!",
+      });
+      setTimeout(() => {
+        this.setState({
+          notificationMsg: "",
+        });
+      }, 4000);
+    } else {
+      this.setState({
+        displayPopup: !this.state.displayPopup,
+      });
+    }
   };
 
   render() {
@@ -47,27 +63,22 @@ class Search extends React.Component {
       },
       {
         name: "Dr. Marian Georgescu",
-        rating: 4
+        rating: 4,
       },
       {
         name: "Dr. Alex Marghescu",
-        rating: 5
-      }
-
+        rating: 5,
+      },
     ];
 
     return (
       <div className="search-page">
-        {
-          this.state.displayPopup &&
-          (this.props.type === "medics") &&
-          <MedicPopup onClick={this.togglePopup}/>
-        }
-        {
-          this.state.displayPopup &&
-          (this.props.type === "clinics") &&
-          <ClinicPopup onClick={this.togglePopup}/>
-        }
+        {this.state.displayPopup && this.props.type === "medics" && (
+          <MedicPopup onClick={this.togglePopup} />
+        )}
+        {this.state.displayPopup && this.props.type === "clinics" && (
+          <ClinicPopup onClick={this.togglePopup} />
+        )}
         <div className="page-wrapper">
           <Link className="logo" to="/">
             <img
@@ -128,6 +139,9 @@ class Search extends React.Component {
               </div>
             </div>
             <div className="search-results-list">
+              {this.state.notificationMsg === "" ? null : (
+                <Notification msg={this.state.notificationMsg} type="green" />
+              )}
               {results.map((result) => (
                 <SearchResult
                   onClick={this.togglePopup}

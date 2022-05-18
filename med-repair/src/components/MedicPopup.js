@@ -7,6 +7,27 @@ import "./MedicPopup.css";
 import DropdownList from "./DropdownList";
 
 class MedicPopup extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: false,
+    };
+  }
+
+  makeAppointment = () => {
+    this.setState({
+      loading: true,
+    });
+    setTimeout(() => {
+      this.setState({
+        loading: false,
+      });
+      this.props.onClick();
+    }, 3000);
+
+    
+  };
+
   render() {
     var medic_details = {
       name: "Dr. Ion Popescu",
@@ -21,6 +42,7 @@ class MedicPopup extends React.Component {
         "Clinica Dr. Rusu, str. Azorelelor, 13",
       ],
     };
+
     return (
       <div className="medic-popup">
         <div className="medic-popup-content">
@@ -80,7 +102,10 @@ class MedicPopup extends React.Component {
           <div className="filters-wrapper">
             <div className="filter">
               <p className="text">Selecteaza locatia:</p>
-              <DropdownList options={["Medic", "Clinica"]} />
+              <DropdownList
+                default={"Clinica Den..."}
+                options={["Medic", "Clinica"]}
+              />
             </div>
             <div className="filter">
               <p className="text">Selecteaza ziua:</p>
@@ -91,9 +116,16 @@ class MedicPopup extends React.Component {
               <input type="time" />
             </div>
           </div>
-          <div className="appointment-button" onClick={this.props.onClick}>
-                    <p className="text">Programeaza-te</p>
-          </div>
+          <button className="appointment-button" onClick={this.makeAppointment}>
+            {this.state.loading ? (
+              <div className="progress-bar">
+                <div className="circle border"></div>
+              </div>
+            ) : (
+              <p className="text">Programeaza-te</p>
+            )}
+          </button>
+          
         </div>
       </div>
     );
