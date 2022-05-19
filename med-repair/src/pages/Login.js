@@ -36,7 +36,7 @@ class Login extends React.Component {
     });
     if (this.state.code === "" || this.state.password === "") {
       this.setState({
-        error: "Please fill in all fields!",
+        error: "Te rog sa introduci toate datele necesare!",
         loading: false,
       });
       setTimeout(() => {
