@@ -4,8 +4,10 @@ import medlogo from "../assets/images/logo.png";
 import { Link, Navigate } from "react-router-dom";
 import Notification from "../components/Notification";
 import { Redirect } from "react-router/cjs/react-router.min";
+import Context from "../components/Context";
 
 class Login extends React.Component {
+  static contextType = Context;
   constructor(props) {
     super(props);
 
@@ -24,10 +26,6 @@ class Login extends React.Component {
       [e.target.name]: e.target.value,
     });
   };
-
-  redirectToHome = () => {
-    this.props.history.push("/home");
-  }
 
   loginHandler = (e) => {
     e.preventDefault();
@@ -48,6 +46,7 @@ class Login extends React.Component {
       setTimeout(() => {
         if (this.state.code === "12345" && this.state.password === "12345") {
           console.log("pushed route!");
+          this.context.setData("loggedIn", true);
           return <Navigate replace to="/"/>;
         } else {
           this.setState({
