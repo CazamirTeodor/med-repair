@@ -3,7 +3,6 @@ import "./Login.css";
 import medlogo from "../assets/images/logo.png";
 import { Link, Navigate } from "react-router-dom";
 import Notification from "../components/Notification";
-import { Redirect } from "react-router/cjs/react-router.min";
 import Context from "../components/Context";
 
 class Login extends React.Component {
@@ -16,6 +15,7 @@ class Login extends React.Component {
       password: "",
       error: "",
       loading: false,
+      success: false,
     };
   }
 
@@ -47,7 +47,11 @@ class Login extends React.Component {
         if (this.state.code === "12345" && this.state.password === "12345") {
           console.log("pushed route!");
           this.context.setData("loggedIn", true);
-          return <Navigate replace to="/"/>;
+          this.setState({
+            success: true,
+            loading: false,
+          });
+          return <Navigate replace to="/" />;
         } else {
           this.setState({
             error: "Cod sau parola gresita!",
@@ -64,7 +68,9 @@ class Login extends React.Component {
   };
 
   render() {
-    return (
+    return this.state.success ? (
+      <Navigate replace to="/" />
+    ) : (
       <div className="page login-page">
         <Link className="logo" to="/">
           <img className="logo-picture" src={medlogo} alt="logo"></img>
