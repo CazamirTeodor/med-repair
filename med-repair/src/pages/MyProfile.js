@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import "./MyProfile.css";
 import medlogo from "../assets/images/logo.png";
 import { Link } from "react-router-dom";
+import MedicPopup from "../components/MedicPopup";
+import ClinicPopup from "../components/ClinicPopup";
+import Notification from "../components/Notification";
 
 let history = [
   {
@@ -62,8 +65,46 @@ export default function MyProfile() {
     last: "23 ianuarie 2021",
     next: "2 aprilie 2023",
   });
+
+  const [popup, setPopup] = useState({
+    show: false,
+    type: "medic",
+    data: undefined,
+  });
+
+  const [notification, setNotification] = useState({
+    show: false,
+    message: "",
+  });
+
+  console.log(notification.message, notification.show);
   return (
     <div className="page myprofile-page">
+      {notification.show && (
+        <Notification msg={notification.message} type="green" />
+      )}
+      {popup.show &&
+        (popup.type === "medic" ? (
+          <MedicPopup
+            onClick={(message) => {
+              setPopup({ show: false });
+              if (message) {
+                setNotification({ show: true, message: message });
+                console.log("should appear");
+                setInterval(() => {
+                  setNotification({ show: false, message: "" });
+                }, 4000);
+              }
+            }}
+          />
+        ) : (
+          <ClinicPopup
+            onClick={() => {
+              setPopup({ show: false });
+            }}
+          />
+        ))}
+
       <Link className="logo" to="/">
         <img
           className="logo-picture"
@@ -194,17 +235,31 @@ export default function MyProfile() {
                   <div className="key">{history_element.date}</div>
                   <div className="key">{history_element.hour}</div>
                   <div
-                    className="key"
+                    className="key clinic"
                     style={{
                       color: "rgb(0, 116, 161)",
+                    }}
+                    onClick={() => {
+                      setPopup({
+                        show: true,
+                        type: "clinic",
+                        data: history_element.hospital,
+                      });
                     }}
                   >
                     {history_element.hospital}
                   </div>
                   <div
-                    className="key"
+                    className="key medic"
                     style={{
                       color: "rgb(0, 116, 161)",
+                    }}
+                    onClick={() => {
+                      setPopup({
+                        show: true,
+                        type: "medic",
+                        data: history_element.medic,
+                      });
                     }}
                   >
                     {history_element.doctor}
@@ -215,7 +270,6 @@ export default function MyProfile() {
                 </div>
               );
             })}
-            <div className="history-view-button"> Afişaţi mai mult </div>
           </div>
         </div>
       </div>

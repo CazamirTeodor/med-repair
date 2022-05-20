@@ -7,6 +7,7 @@ import PhoneIcon from "../assets/images/phone.png";
 import EmailIcon from "../assets/images/email.png";
 import SuitcaseIcon from "../assets/images/suitcase.png";
 import DoctorIcon from "../assets/images/surgeon-doctor.png";
+import Notification from "./Notification";
 
 import "./ClinicPopup.css";
 import MedicPopup from "./MedicPopup";
@@ -17,6 +18,8 @@ class ClinicPopup extends React.Component {
     super(props);
     this.state = {
       selectedSpecialty: undefined,
+      showDoctor: false,
+      notificationMsg: "",
     };
   }
 
@@ -113,6 +116,21 @@ class ClinicPopup extends React.Component {
     };
     return (
       <div className="clinic-popup">
+        {this.state.notificationMsg && (
+          <Notification msg={this.state.notificationMsg} type="green" />
+        )}
+        {this.state.showDoctor && (
+          <MedicPopup
+            onClick={(msg) => {
+              this.setState({ showDoctor: false });
+              if (msg) {
+                this.setState({
+                  notificationMsg: msg,
+                });
+              }
+            }}
+          />
+        )}
         <div className="clinic-popup-content">
           <div className="close-button" onClick={() => this.props.onClick()}>
             <img src={CloseIcon} alt="close icon" />
@@ -206,7 +224,19 @@ class ClinicPopup extends React.Component {
             {this.state.selectedSpecialty && (
               <div className="medics">
                 {medics[this.state.selectedSpecialty].map((medic) => {
-                  return <SearchResult image={DoctorIcon} name={medic.name} rating={medic.rating}/>;
+                  return (
+                    <div
+                      onClick={() => {
+                        this.setState({ showDoctor: true });
+                      }}
+                    >
+                      <SearchResult
+                        image={DoctorIcon}
+                        name={medic.name}
+                        rating={medic.rating}
+                      />
+                    </div>
+                  );
                 })}
               </div>
             )}
